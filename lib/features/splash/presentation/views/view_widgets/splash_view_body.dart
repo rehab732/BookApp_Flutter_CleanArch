@@ -1,7 +1,5 @@
-import 'package:bookbox/constants.dart';
 import 'package:bookbox/core/utils/app_router.dart';
 import 'package:bookbox/core/utils/assets.dart';
-import 'package:bookbox/features/home/presentation/views/home_view.dart';
 import 'package:bookbox/features/splash/presentation/views/view_widgets/slider_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
