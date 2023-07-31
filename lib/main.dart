@@ -2,6 +2,7 @@ import 'package:bookbox/constants.dart';
 import 'package:bookbox/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const BookBox());
@@ -13,7 +14,11 @@ class BookBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return   GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:ThemeData.dark().copyWith(scaffoldBackgroundColor: mainColor) ,
+      theme:ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: mainColor,
+        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+        ) ,
+    
       home:const SplashView(),
     );
   }
