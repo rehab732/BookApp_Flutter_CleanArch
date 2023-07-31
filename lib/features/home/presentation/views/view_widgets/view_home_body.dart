@@ -1,7 +1,6 @@
-import 'dart:html';
-
 import 'package:bookbox/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'best_seller_list_view_item.dart';
 import 'books_list_view.dart';
 import 'custom_app_bar.dart';
 
@@ -22,8 +21,12 @@ class ViewHomeBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
+          SizedBox(
+            height: 20,
+          ),
+          BestsellerListViewItem(),
         ],
       ),
     );
