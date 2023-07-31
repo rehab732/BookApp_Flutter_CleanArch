@@ -18,9 +18,7 @@ class SliderText extends StatelessWidget {
             child: const Text(
               'Free Books, Rich Mind ',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.red,
-              ),
+              
             ),
           );
         });

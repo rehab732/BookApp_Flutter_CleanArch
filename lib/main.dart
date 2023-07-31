@@ -13,7 +13,7 @@ class BookBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return   GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme:ThemeData.dark().copyWith(scaffoldBackgroundColor: AppColors.mainColor) ,
+      theme:ThemeData.dark().copyWith(scaffoldBackgroundColor: mainColor) ,
       home:const SplashView(),
     );
   }

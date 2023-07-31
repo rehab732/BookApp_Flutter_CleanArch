@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
 
-class AppColors {
-  static const mainColor = Color(0xff100B20);
-}
+const mainColor = Color(0xff100B20);
+const kTransitionDuration = Duration(microseconds: 250);

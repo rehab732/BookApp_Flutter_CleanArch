@@ -1,7 +1,11 @@
+import 'package:bookbox/constants.dart';
 import 'package:bookbox/core/utils/assets.dart';
+import 'package:bookbox/features/home/presentation/views/home_view.dart';
 import 'package:bookbox/features/splash/presentation/views/view_widgets/slider_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -18,8 +22,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
     initslidinganimation();
+    Future.delayed(const Duration(seconds: 2),(){
+      Get.to(()=> const HomeView(),transition:Transition.fade,duration: kTransitionDuration);
+    });
   }
-
 
   @override
   void dispose() {
@@ -34,10 +40,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Image.asset(
-          AssetsBookData.logo,
+          AssetsBookData.splash,
           //TODOneed to remove this height and width
-          height: 350,
-          width: 350,
+          // height: 350,
+          // width: 350,
         ),
         //TODOcheck the animation when run on mobile
         SliderText(slidertext: slidertext),
@@ -45,19 +51,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
     ));
   }
 
-
-
-    void initslidinganimation() {
-      controller =
+  void initslidinganimation() {
+    controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidertext = Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
         .animate(controller);
     controller.forward();
     // slidertext.addListener(() {
     //   setState(() {
-    
+
     //   });
     // });
   }
-
 }
