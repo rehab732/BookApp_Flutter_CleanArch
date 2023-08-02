@@ -14,5 +14,3 @@ class FeachFeturedBooksUseCase extends UseCase<List<BookEntity>, NoParam> {
     return homeRepo.fetchBooks();
   }
 }
-
-

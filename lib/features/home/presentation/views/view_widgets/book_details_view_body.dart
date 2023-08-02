@@ -56,10 +56,10 @@ class BookDetalisViewBody extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'You Can also like',
-                  style: Styles.textStyle14
-                      .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
+                  style: Styles.textStyle14.copyWith(
+                      fontWeight: FontWeight.w600, color: Colors.white),
                 )),
-              const  SimilarBookListView()
+            const SimilarBookListView()
           ],
         ),
       ),

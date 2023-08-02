@@ -11,16 +11,13 @@ class BookBox extends StatelessWidget {
   const BookBox({super.key});
   @override
   Widget build(BuildContext context) {
-    return   MaterialApp.router(
+    return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      theme:ThemeData.dark().copyWith(
+      theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mainColor,
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-        ) ,
-    
+      ),
     );
   }
 }
-
-

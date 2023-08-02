@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 class SliderText extends StatelessWidget {
   const SliderText({
     super.key,
@@ -18,7 +18,6 @@ class SliderText extends StatelessWidget {
             child: const Text(
               'Free Books, Rich Mind ',
               textAlign: TextAlign.center,
-              
             ),
           );
         });

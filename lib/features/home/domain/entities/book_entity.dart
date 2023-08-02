@@ -6,6 +6,4 @@ class BookEntity {
   final String autherName;
 
   BookEntity(this.image, this.title, this.price, this.rating, this.autherName);
-  
-
 }

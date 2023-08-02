@@ -7,23 +7,20 @@ abstract class Styles {
     fontWeight: FontWeight.w600,
   );
 
-    static const textStyle20 = TextStyle(
+  static const textStyle20 = TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.normal,
   );
-      static const textStyle30 = TextStyle(
+  static const textStyle30 = TextStyle(
     fontSize: 30.0,
     fontWeight: FontWeight.normal,
     fontFamily: kGtSectraFine,
   );
 
-    static const textStyle14 = TextStyle(
-    fontSize: 14.0,
-    fontWeight: FontWeight.normal,
-    color: Colors.grey
-  );
+  static const textStyle14 = TextStyle(
+      fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey);
 
-    static const textStyle16 = TextStyle(
+  static const textStyle16 = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.w500,
   );
