@@ -7,7 +7,7 @@ final class FetchBooksInitial extends FetchBooksState {}
 final class FetchBooksLoading extends FetchBooksState {}
 final class FetchBooksFauiler extends FetchBooksState {
   final String message;
-   FetchBooksFauiler({required this.message});
+   FetchBooksFauiler( this.message);
 }
 final class FetchBooksSuccess extends FetchBooksState {
   final List<BookEntity> books;
