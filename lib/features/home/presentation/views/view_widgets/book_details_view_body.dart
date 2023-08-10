@@ -23,7 +23,7 @@ class BookDetalisViewBody extends StatelessWidget {
             const CustomBookDetailsAppBar(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * .2),
-              child: const CustomListViewItem(),
+              child: const CustomListViewItem(image: '',),
             ),
             const SizedBox(
               height: 40,

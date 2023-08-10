@@ -14,10 +14,11 @@ class FeaturedBooksListViewBlocBuilder extends StatelessWidget {
     return BlocBuilder<FetchBooksCubit, FetchBooksState>(
       builder: (context, state) {
         if (state is FetchBooksSuccess) {
-          return const BooksListView();
+          return  BooksListView(books: state.books,);
         } else if (state is FetchBooksFauiler) {
           return Text(state.message);
-        } else {
+        }else
+        {
           return const CircularProgressIndicator();
         }
       },
