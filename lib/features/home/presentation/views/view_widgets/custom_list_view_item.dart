@@ -12,6 +12,7 @@ class CustomListViewItem extends StatelessWidget {
       child:ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: CachedNetworkImage(
+            errorWidget: (context, url, error) =>const Icon(Icons.error),
           imageUrl: image,
         fit: BoxFit.fill,),
       )
