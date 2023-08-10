@@ -10,12 +10,13 @@ class BooksListView extends StatefulWidget {
   final List<BookEntity> books;
 
   @override
-  State<StatefulWidget >createState() => _BooksListViewState();
+  State<StatefulWidget> createState() => _BooksListViewState();
 }
 
 class _BooksListViewState extends State<BooksListView> {
-  late ScrollController _scrollController;
-
+  late final ScrollController _scrollController;
+  var nextPage = 1;
+  var isLoading = false;
   @override
   void initState() {
     super.initState();
@@ -23,10 +24,15 @@ class _BooksListViewState extends State<BooksListView> {
     _scrollController.addListener(_scrollListener);
   }
 
-  void _scrollListener() {
+  void _scrollListener() async {
     if (_scrollController.position.pixels >=
         0.7 * _scrollController.position.maxScrollExtent) {
-      BlocProvider.of<FetchBooksCubit>(context).fetchFeaturedBooks();
+      if (!isLoading) {
+        isLoading = true;
+        await BlocProvider.of<FetchBooksCubit>(context)
+            .fetchFeaturedBooks(pageNumber: nextPage++);
+        isLoading = false;
+      }
     }
   }
 
