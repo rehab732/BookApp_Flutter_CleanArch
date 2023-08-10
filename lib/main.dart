@@ -1,5 +1,6 @@
 import 'package:bookbox/constants.dart';
 import 'package:bookbox/core/utils/app_router.dart';
+import 'package:bookbox/core/utils/main_bloc_observer.dart';
 import 'package:bookbox/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookbox/features/home/domain/entities/book_entity.dart';
 import 'package:bookbox/features/home/domain/use_cases/fetch_featuerd_books_use_case.dart';
@@ -20,9 +21,9 @@ void main() async {
   serviceLocator();
   await Hive.openBox<BookEntity>(kFeaturedBox);
   await Hive.openBox<BookEntity>(kNewestBox);
+  Bloc.observer = MainBlocObserver();
   runApp(const BookBox());
 }
-
 
 final getIt = GetIt.instance;
 
@@ -36,10 +37,11 @@ class BookBox extends StatelessWidget {
           create: (context) {
             return FetchBooksCubit(FeachFeturedBooksUseCase(
               getIt.get<HomeRepoImplementation>(),
-            ));
+            ),
+            )..fetchFeaturedBooks();
           },
         ),
-          BlocProvider(
+        BlocProvider(
           create: (context) {
             return NewBooksCubit(FetchNewsBooksUseCase(
               getIt.get<HomeRepoImplementation>(),
