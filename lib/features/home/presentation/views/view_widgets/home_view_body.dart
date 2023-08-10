@@ -3,6 +3,7 @@ import 'package:bookbox/features/home/presentation/views/view_widgets/best_selle
 import 'package:flutter/material.dart';
 import 'books_list_view.dart';
 import 'custom_app_bar.dart';
+import 'featured_books_list_view_bloc_builder.dart';
 
 class ViewHomeBody extends StatelessWidget {
   const ViewHomeBody({super.key});
@@ -16,7 +17,7 @@ class ViewHomeBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              BooksListView(),
+              FeaturedBooksListViewBlocBuilder(),
               SizedBox(
                 height: 30,
               ),
