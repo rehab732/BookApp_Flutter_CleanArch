@@ -5,7 +5,7 @@ import 'package:bookbox/features/home/domain/entities/book_entity.dart';
 import '../../../../core/utils/functions/sava_data.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchBooks();
+  Future<List<BookEntity>> fetchBooks({int pageNumber=0});
   Future<List<BookEntity>> fetchNewBooks();
 }
 
@@ -14,9 +14,9 @@ class HomeRemoteDataSourceImplementation extends HomeRemoteDataSource {
 
   HomeRemoteDataSourceImplementation(this.apiService);
   @override
-  Future<List<BookEntity>> fetchBooks() async {
+  Future<List<BookEntity>> fetchBooks({int pageNumber=0}) async {
     var data = await apiService.get(
-        endpoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
+        endpoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=programming&startIndex=${pageNumber*10}');
     List<BookEntity> books = getBooksList(data);
 
     saveBooksData(books,kFeaturedBox);

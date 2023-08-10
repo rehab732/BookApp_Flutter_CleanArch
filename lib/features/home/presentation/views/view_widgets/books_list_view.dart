@@ -14,8 +14,6 @@ class BooksListView extends StatelessWidget {
           itemCount: books.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            // print("tessssssst");
-            // print(books[index].image);
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: CustomListViewItem(

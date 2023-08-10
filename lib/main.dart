@@ -16,7 +16,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'core/utils/functions/setup_service_locator.dart';
 
 void main() async {
-  Hive.initFlutter();
+await  Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   serviceLocator();
   await Hive.openBox<BookEntity>(kFeaturedBox);
