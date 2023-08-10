@@ -18,7 +18,11 @@ class FetchBooksCubit extends Cubit<FetchBooksState> {
     }
     var result = await featuredBooksUseCase.call(pageNumber);
     result.fold((fauiler) {
-      emit(FetchBooksFauiler(fauiler.message));
+      if (pageNumber == 0) {
+        emit(FetchBooksFauiler(fauiler.message));
+      } else {
+        emit(FetchBooksPagenationFauiler(fauiler.message));
+      }
     }, (books) {
       emit(FetchBooksSuccess(books));
     });

@@ -26,10 +26,24 @@ class _FeaturedBooksListViewBlocBuilderState
         if (state is FetchBooksSuccess) {
           books.addAll(state.books);
         }
+
+        if (state is FetchBooksPagenationFauiler) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                state.message,
+                style: const TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+              duration:const Duration(seconds: 3),
+            ),
+          );
+        }
       },
       builder: (context, state) {
         if (state is FetchBooksSuccess ||
-            state is FetchBooksPagenationLoading) {
+            state is FetchBooksPagenationLoading ||
+            state is FetchBooksPagenationFauiler) {
           return BooksListView(
             books: books,
           );
