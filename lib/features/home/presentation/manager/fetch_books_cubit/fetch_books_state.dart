@@ -5,6 +5,8 @@ sealed class FetchBooksState {}
 
 final class FetchBooksInitial extends FetchBooksState {}
 final class FetchBooksLoading extends FetchBooksState {}
+final class FetchBooksPagenationLoading extends FetchBooksState {}
+
 final class FetchBooksFauiler extends FetchBooksState {
   final String message;
    FetchBooksFauiler( this.message);
